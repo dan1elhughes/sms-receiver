@@ -1,6 +1,6 @@
-const { send, text } = require("micro");
-const { router, post } = require("microrouter");
 const assert = require("assert");
+
+const { send, text } = require("micro");
 const parse = require("urlencoded-body-parser");
 const got = require("got");
 const twilio = require("twilio");
@@ -42,7 +42,7 @@ async function mustValidateTwilioSignature(req) {
   if (!valid) throw new Error("Invalid signature");
 }
 
-const postSMS = async (req, res) => {
+module.exports = async function postSMS(req, res) {
   await mustValidateTwilioSignature(req);
 
   const { From: from, Body: body } = await parse(req);
@@ -78,5 +78,3 @@ const postSMS = async (req, res) => {
 
   send(res, 200);
 };
-
-module.exports = router(post("/sms", postSMS));

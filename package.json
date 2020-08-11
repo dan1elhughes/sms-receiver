@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "micro",
-    "dev": "micro-dev",
+    "dev": "vercel dev",
+    "deploy": "vercel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,12 +23,12 @@
   "dependencies": {
     "got": "^11.5.2",
     "micro": "^9.3.4",
-    "microrouter": "^3.1.3",
     "twilio": "^3.48.2",
     "urlencoded-body-parser": "^3.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "micro-dev": "^3.0.0"
+    "micro-dev": "^3.0.0",
+    "vercel": "^19.2.0"
   }
 }

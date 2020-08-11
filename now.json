@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "env": {
+    "SLACK_TOKEN": "@smsreceiver_slack_token",
+    "SLACK_USER_ID": "@smsreceiver_slack_user_id",
+    "TWILIO_AUTH_TOKEN": "@smsreceiver_twilio_auth_token",
+    "TWILIO_REQUEST_URL": "@smsreceiver_twilio_request_url"
+  },
+  "github": {
+    "silent": true
+  }
+}
